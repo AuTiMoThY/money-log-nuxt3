@@ -1,0 +1,16 @@
+.site-header {
+    height: 56px;
+    background-color: var(--primary-color);
+
+    .container {
+        height: 100%;
+    }
+
+    &-inner {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 16px;
+    }
+}

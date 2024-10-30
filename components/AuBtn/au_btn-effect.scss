@@ -1,0 +1,48 @@
+.au_btn-effect {
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+                circle at calc(var(--cursor-x) * 1px) calc(var(--cursor-y) * 1px),
+                hsla(0, 0%, 100%, 0.5),
+                transparent 5vmin
+            ),
+            transparent;
+        background-attachment: fixed;
+        pointer-events: none;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+        border-radius: var(--bdra);
+        padding: 1px;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at calc(var(--cursor-x) * 1px) calc(var(--cursor-y) * 1px),
+            hsla(0, 0%, 100%, 0.15),
+            transparent 5vmin
+        );
+        background-attachment: fixed;
+        opacity: var(--active, 0);
+        transition: opacity 0.2s;
+        pointer-events: none;
+
+        border-radius: var(--bdra);
+    }
+
+    &:hover {
+        --active: 1;
+        text-decoration: none;
+    }
+}

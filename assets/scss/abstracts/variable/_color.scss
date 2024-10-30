@@ -1,0 +1,38 @@
+$primary: #00747c;
+$secondary: #00bbc9;
+$color-primary: (
+    lighten($primary, 68%),
+    lighten($primary, 50%),
+    lighten($primary, 40%),
+    lighten($primary, 30%),
+    lighten($primary, 20%),
+    lighten($primary, 10%),
+    lighten($primary, 5%),
+    $primary,
+    darken($primary, 10%)
+);
+// $color-primary: (#faf5ff, #eee0ff, #c999ff, #bb80ff, #7023c7, #570eaa, #440e81, #311254, #190d26);
+// $color-gray: (#fff, #faf9fa, #eae9ed, #d6d3d9, #b2aeb7, #ada9b2, #8c8891, #4c4950, #26222a);
+$color: (
+    "gray-1": #cacaca,
+    "gray-2": #878787,
+    "gray-3": #202022,
+
+    "auxiliary-color-1": #04be02,
+    "auxiliary-color-2": #ea4e3d,
+    "auxiliary-color-3": #ffaa09,
+
+    "status-color-1": #3bac66,
+    "status-color-2": #ffaa09,
+    "status-color-3": #ea4f3d,
+
+    "theme-color": #c4d8ff,
+    "primary-color": $primary,
+    "secondary-color": $secondary,
+    "light-color": #666666,
+    "border-color": #333333,
+    "panel-color": #222222,
+    "primary-button-text-color": #7ff800,
+
+    "background-color": #037f85
+);
