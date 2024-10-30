@@ -18,7 +18,11 @@ onUnmounted(() => {});
     <main class="page_main page-home">
         <div class="container">
             <div class="recent_expense">
-                <expense-item :data="expenseData"></expense-item>
+                <ul class="recent_expense-list">
+                    <li class="recent_expense-item">
+                        <expense-item :data="expenseData"></expense-item>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
