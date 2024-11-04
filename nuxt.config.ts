@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
     app: {
         baseURL: basePath,
-        buildAssetsDir: "~/assets/",
+        // buildAssetsDir: "assets/",
         head: {
             link: [],
             style: [],

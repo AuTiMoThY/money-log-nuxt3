@@ -13,7 +13,7 @@ const props = defineProps({
                 <div class="date">{{ props.data.date }}</div>
                 <div class="amount">
                     <span class="amount-currency">{{ props.data.currency }}</span>
-                    <span class="amount-value">{{ props.data.amount }}</span>
+                    <span class="amount-value">{{ props.data.total }}</span>
                 </div>
             </div>
             <div class="expense_item-bd">

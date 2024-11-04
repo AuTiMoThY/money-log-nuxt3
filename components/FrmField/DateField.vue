@@ -40,7 +40,7 @@ watch(
                 <input
                     :id="id"
                     v-model.trim="value"
-                    type="text"
+                    type="date"
                     class="frm_field-input"
                     :placeholder="placeholder"
                     @input="handleInput"

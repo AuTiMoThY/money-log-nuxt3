@@ -28,6 +28,3 @@ const handleLogout = () => {
         </div>
     </header>
 </template>
-<style lang="scss">
-@import "./site-header.scss";
-</style>

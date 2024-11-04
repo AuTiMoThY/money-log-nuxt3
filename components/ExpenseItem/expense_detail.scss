@@ -1,2 +1,36 @@
 .expense_detail {
+    &-list {
+        display: flex;
+        flex-direction: column;
+        // gap: 8px;
+        padding: 8px 16px;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--gray-1);
+        }
+    }
+
+    &-name {
+        color: var(--secondary-color);
+    }
+
+    &-amount {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        &-currency {
+            font-size: 0.8rem;
+            color: var(--gray-2);
+        }
+        &-value {
+            color: var(--status-color-3);
+        }
+    }
 }

@@ -1,0 +1,30 @@
+.block-category {
+    padding: 8px;
+    border-radius: 8px;
+    background: #fff;
+
+    /* inner-shadow */
+    box-shadow: 0px 0px 10px 0px rgba(220, 220, 220, 0.5) inset;
+}
+
+.block-category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.block-category-item {
+    .au_btn {
+        --bg-hover-color: transparent;
+        --bd-color: transparent;
+        --bd-hover-color: transparent;
+        --txt-color: var(--gray-3);
+        --txt-hover-color: var(--gray-3);
+        min-width: unset;
+    }
+
+    .au_btn-icon.icon-top {
+        width: 30px;
+        height: 30px;
+    }
+}

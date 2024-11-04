@@ -1,0 +1,17 @@
+.fast_btn-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.fast_btn-item {
+    .au_btn {
+        --bg-hover-color: #fff;
+        --txt-hover-color: var(--gray-3);
+
+        &-txt {
+            font-weight: 400;
+            word-break: keep-all;
+        }
+    }
+}

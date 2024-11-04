@@ -1,5 +1,9 @@
 .body_wrapper {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     padding-top: var(--site-header-height);
     background-color: var(--background-color);
     height: 100dvh;
+    overflow: hidden;
 }
