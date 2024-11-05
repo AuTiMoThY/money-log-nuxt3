@@ -6,15 +6,9 @@
     width: 100%;
     height: 100dvh;
 
-<<<<<<< HEAD:pages/login/index.scss
     @include media-down(1280) {
         // grid-template-columns: 1fr;
     }
-=======
-    // @include media-down(1280) {
-    grid-template-columns: 1fr;
-    // }
->>>>>>> 849a5107a4a7e9caa9717168c4c4aa7208a27ec7:pages/login/page-login.scss
 
     .brand {
         display: flex;
@@ -25,11 +19,7 @@
         background-color: var(--primary-color);
 
         // @include media-down(1280) {
-<<<<<<< HEAD:pages/login/index.scss
             height: var(--brand-height-wap);
-=======
-        height: var(--brand-height-wap);
->>>>>>> 849a5107a4a7e9caa9717168c4c4aa7208a27ec7:pages/login/page-login.scss
         // }
     }
 
@@ -40,13 +30,8 @@
         writing-mode: vertical-lr;
 
         // @include media-down(1280) {
-<<<<<<< HEAD:pages/login/index.scss
             writing-mode: horizontal-tb;
             font-size: 2rem;
-=======
-        writing-mode: horizontal-tb;
-        font-size: 2rem;
->>>>>>> 849a5107a4a7e9caa9717168c4c4aa7208a27ec7:pages/login/page-login.scss
         // }
     }
 
@@ -56,11 +41,7 @@
         align-items: center;
 
         // @include media-down(1280) {
-<<<<<<< HEAD:pages/login/index.scss
             height: calc(100dvh - var(--brand-height-wap));
-=======
-        height: calc(100dvh - var(--brand-height-wap));
->>>>>>> 849a5107a4a7e9caa9717168c4c4aa7208a27ec7:pages/login/page-login.scss
         // }
     }
 
