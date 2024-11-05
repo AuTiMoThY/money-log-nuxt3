@@ -12,6 +12,7 @@
 }
 
 .calculator-btn {
+    min-width: unset;
     &.col-2 {
         grid-column: span 2;
     }

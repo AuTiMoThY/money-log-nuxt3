@@ -14,4 +14,8 @@
     .title {
         color: var(--primary-color);
     }
+
+    &.panel-add {
+        overflow-y: auto;
+    }
 }

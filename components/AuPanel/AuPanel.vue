@@ -1,5 +1,5 @@
 <template>
-    <div class="au_panel au_panel-fast">
+    <div class="au_panel">
         <div class="container">
             <slot></slot>
         </div>
