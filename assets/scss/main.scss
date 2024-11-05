@@ -56,6 +56,10 @@
 /* ↓↓↓ ***** entry ***** ↓↓↓ */
 @import "frontend/entry/page-home";
 @import "frontend/entry/add_wrap";
+@import "frontend/entry/fast_wrap";
+@import "frontend/entry/calculator-btn-wrap";
 @import "~/components/PanelFast/panel-fast";
+@import "~/components/PanelAdd/panel-add";
 @import "~/components/BlockCategory/block-category";
+@import "~/components/BlockAmount/block-amount";
 /* ↑↑↑ ***** entry ***** ↑↑↑ */

@@ -1,0 +1,19 @@
+.panel-add {
+    .add-close {
+        --bd-color: transparent;
+        --bd-hover-color: transparent;
+        --bg-color: #fff;
+        --bg-hover-color: #fff;
+        --bdra: 8px 8px 0 0;
+        --hover-shadow: none;
+        @include absolute(-30px, $L: 50%);
+        transform: translateX(-50%);
+
+        .au_btn-inner {
+            box-shadow: 0 -3px 3px rgba(220, 220, 220, 0.5);
+        }
+        .au_btn-icon {
+            width: 15px;
+        }
+    }
+}

@@ -27,4 +27,12 @@
         width: 30px;
         height: 30px;
     }
+
+    &.active {
+        .au_btn {
+            &-inner {
+                border-color: var(--bd-hover-color);
+            }
+        }
+    }
 }

@@ -6,10 +6,3 @@
         padding-bottom: 46px;
     }
 }
-
-.fast_wrap {
-    @include absolute($B: 0, $L: 0, $R: 0);
-    height: auto;
-    max-height: 50dvh;
-    // background-color: #fff;
-}

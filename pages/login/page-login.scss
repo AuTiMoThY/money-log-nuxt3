@@ -6,9 +6,9 @@
     width: 100%;
     height: 100dvh;
 
-    @include media-down(1280) {
-        grid-template-columns: 1fr;
-    }
+    // @include media-down(1280) {
+    grid-template-columns: 1fr;
+    // }
 
     .brand {
         display: flex;
@@ -18,9 +18,9 @@
         height: 100%;
         background-color: var(--primary-color);
 
-        @include media-down(1280) {
-            height: var(--brand-height-wap);
-        }
+        // @include media-down(1280) {
+        height: var(--brand-height-wap);
+        // }
     }
 
     .title {
@@ -29,10 +29,10 @@
         font-size: 3rem;
         writing-mode: vertical-lr;
 
-        @include media-down(1280) {
-            writing-mode: horizontal-tb;
-            font-size: 2rem;
-        }
+        // @include media-down(1280) {
+        writing-mode: horizontal-tb;
+        font-size: 2rem;
+        // }
     }
 
     .login_wrap {
@@ -40,9 +40,9 @@
         justify-content: center;
         align-items: center;
 
-        @include media-down(1280) {
-            height: calc(100dvh - var(--brand-height-wap));
-        }
+        // @include media-down(1280) {
+        height: calc(100dvh - var(--brand-height-wap));
+        // }
     }
 
     .login_block {
@@ -55,6 +55,10 @@
 
         border-radius: $border-radius-base;
         box-shadow: map-get($dropShadow, "window-bottom"), map-get($dropShadow, "window-topleft");
+
+        @include media-down(576) {
+            width: calc(100% - var(--spacing-4x));
+        }
     }
 }
 
