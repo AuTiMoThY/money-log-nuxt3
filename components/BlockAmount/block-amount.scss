@@ -1,0 +1,23 @@
+.block-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #fff;
+
+    /* inner-shadow */
+    box-shadow: 0px 0px 10px 0px rgba(220, 220, 220, 0.5) inset;
+
+    min-height: 50px;
+
+    .amount-currency {
+        font-size: 0.8rem;
+        color: var(--gray-2);
+    }
+    .amount-value {
+        font-size: 1.2rem;
+        color: var(--status-color-3);
+    }
+}

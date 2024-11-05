@@ -1,76 +1,68 @@
 <script setup>
 import { usePanelStore } from "~/stores/usePanelStore";
+import { useCurrencyStore } from "~/stores/useCurrencyStore";
+
+// Fetch data with error handling
+const { data: categoryData, error } = await useFetch("/api/category");
+const categoryArr = categoryData.value?.categoryArr || [];
 
 const panelStore = usePanelStore();
 const { isAddPanel, selectedItem } = storeToRefs(panelStore);
 
-const expenseData = {
-    date: "2024-01-01",
-    // total: 100,
-    currency: "NT$",
-    detailList: [
-        {
-            name: "項目",
-            amount: 50
-        },
-        {
-            name: "項目",
-            amount: 50
-        },
-        {
-            name: "項目",
-            amount: 50
-        },
-        {
-            name: "項目",
-            amount: 50
-        },
-        {
-            name: "項目",
-            amount: 50
-        },
-        {
-            name: "項目",
-            amount: 50
-        }
-    ]
-};
+const currencyStore = useCurrencyStore();
+const { currency } = storeToRefs(currencyStore);
 
-const total = computed(() => {
-    return expenseData.detailList.reduce((acc, curr) => acc + curr.amount, 0);
+// Create reactive expense data
+const expenseData = reactive({
+    date: "2024-01-01",
+    currency: currency.value,
+    detailList: [
+        { name: "項目", amount: 50 },
+        { name: "項目", amount: 50 },
+        { name: "項目", amount: 50 },
+        { name: "項目", amount: 50 },
+        { name: "項目", amount: 50 },
+        { name: "項目", amount: 50 }
+    ],
+    // Calculate total directly in the reactive object
+    get total() {
+        return this.detailList.reduce((acc, curr) => acc + curr.amount, 0);
+    }
 });
 
-expenseData.total = total;
+// Improve fastBtnList structure and initialization
+const fastBtnList = ref(
+    [
+        { name: "項目1", category_id: 1 },
+        { name: "項目2", category_id: 2 },
+        { name: "項目3", category_id: 3 },
+        { name: "項目4", category_id: 1 }
+    ].map((item) => ({
+        ...item,
+        rgb: categoryArr.find((i) => i.id === item.category_id)?.rgb || "#000000",
+        icon: categoryArr.find((i) => i.id === item.category_id)?.icon || ""
+    }))
+);
 
-const fastBtnList = [
-    {
-        name: "項目1",
-        rgb: [108, 167, 57],
-        icon: "FoodBar.png"
-    },
-    {
-        name: "項目2",
-        rgb: [138, 68, 149],
-        icon: "Clothes.png"
-    },
-    {
-        name: "項目3",
-        rgb: [218, 185, 95],
-        icon: "Home.png"
-    },
-    {
-        name: "項目4",
-        rgb: [108, 167, 57],
-        icon: "FoodBar.png"
-    }
-];
+// Improve click handler with type checking
+const handleFastClick = (item) => {
+    if (!item) return;
 
-const handleFastClick = (name) => {
-    console.log(name);
     isAddPanel.value = true;
-    selectedItem.value = name;
+    selectedItem.value = item;
 };
-onMounted(async () => {});
+
+// Add error handling for the API call
+watchEffect(() => {
+    if (error.value) {
+        console.error("Failed to fetch categories:", error.value);
+        // You might want to add error handling UI here
+    }
+});
+
+onMounted(() => {
+    console.log("fastBtnList", fastBtnList.value);
+});
 
 onUnmounted(() => {});
 </script>

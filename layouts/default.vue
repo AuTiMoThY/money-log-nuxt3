@@ -4,11 +4,15 @@ import { storeToRefs } from "pinia";
 
 const panelStore = usePanelStore();
 // Use storeToRefs to maintain reactivity
-const { isAddPanel } = storeToRefs(panelStore);
+const { isAddPanel, selectedItem } = storeToRefs(panelStore);
+
+watch(isAddPanel, (newValue) => {
+    console.log(newValue);
+});
 
 onMounted(() => {
     document.addEventListener("click", (event) => {
-        if (!event.target.closest(".add_wrap, .fast_btn-item")) {
+        if (!event.target.closest(".add_wrap, .fast_btn-item, .add-btn")) {
             isAddPanel.value = false;
         }
     });

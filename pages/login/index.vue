@@ -65,5 +65,5 @@ onMounted(() => {});
     </main>
 </template>
 <style lang="scss">
-@import "./index.scss";
+@import "./page-login.scss";
 </style>

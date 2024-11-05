@@ -1,0 +1,24 @@
+.calculator-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.calculator-btn-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.calculator-btn {
+    &.col-2 {
+        grid-column: span 2;
+    }
+
+    .au_btn-inner {
+        box-shadow:
+            0 3px 5px rgba(color("primary-color"), 0.1),
+            0 0 10px #{rgba(#dcdcdc, 0.5)};
+    }
+}
