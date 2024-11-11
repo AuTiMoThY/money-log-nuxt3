@@ -162,7 +162,7 @@ const handleSubmit = () => {
 };
 
 watch(selectedItem, (newValue) => {
-    // console.log("selectedItem newValue:", newValue);
+    console.log("selectedItem newValue:", newValue);
     date.value = newValue.date;
     name.value = newValue.name;
     category_id.value = newValue.category_id;
@@ -192,10 +192,11 @@ watch(
             <div class="frm-row">
                 <input-field v-model="name" :placeholder="'名稱'"></input-field>
             </div>
-            <div class="frm-row">
+            <!-- <div class="frm-row">
                 <block-category :active-id="category_id"></block-category>
-            </div>
+            </div> -->
             <div class="frm-row">
+                <block-category-single></block-category-single>
                 <block-amount ref="amountBlock"></block-amount>
             </div>
             <div class="frm-row">

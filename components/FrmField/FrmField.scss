@@ -106,6 +106,7 @@
         -webkit-appearance: none;
         appearance: none; // Fix appearance for date inputs in Safari
         outline: none;
+        min-height: 40px;
     }
 
     &-no-border {
