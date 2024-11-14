@@ -12,6 +12,7 @@ const today = new Date().toISOString().split("T")[0];
 const date = ref(selectedItem.value.date || today);
 const name = ref(selectedItem.value.name || "");
 const category_id = ref(selectedItem.value.category_id);
+// const blockCategorySingle = ref(null);
 
 // Add calculator buttons array
 const calculatorButtons = [
@@ -180,6 +181,24 @@ watch(
         }
     }
 );
+
+// const getBlockCategoryPosition = () => {
+//     return blockCategorySingle.value?.getPosition();
+// };
+
+// // Example usage:
+// const handleSomeEvent = () => {
+//     const position = getBlockCategoryPosition();
+//     console.log("Category button position:", position);
+//     // position will contain: { x, y, width, height, right, bottom }
+// };
+
+// onMounted(() => {
+//     nextTick(() => {
+//         // const position = getBlockCategoryPosition();
+//         // console.log("Category button position:", position);
+//     });
+// });
 </script>
 <template>
     <au-panel class="panel-add">
@@ -200,6 +219,7 @@ watch(
             </div> -->
             <div class="frm-row frm-row-inline">
                 <block-category-single></block-category-single>
+                <!-- <block-category-single ref="blockCategorySingle"></block-category-single> -->
                 <block-amount ref="amountBlock"></block-amount>
             </div>
             <div class="frm-row">
@@ -233,6 +253,9 @@ watch(
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="popup-category">
+            <block-category :active-id="category_id"></block-category>
         </div>
     </au-panel>
 </template>

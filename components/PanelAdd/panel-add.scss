@@ -23,3 +23,13 @@
         }
     }
 }
+
+.popup-category {
+    @include absolute($L: 50%);
+    transform: translateX(-50%);
+    z-index: 10;
+    bottom: 10dvh;
+
+    width: 90%;
+    background-color: #fff;
+}

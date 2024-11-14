@@ -29,20 +29,44 @@ onMounted(() => {
     // console.log(props.categoryId);/
     // console.log(item.value);
 });
+
+const safeCategory = computed(() => {
+    return categoryItem.value || { name: "", rgb: "255,255,255", icon: "default.png" };
+});
+
+// const rootEl = ref(null);
+
+// const getPosition = () => {
+//     if (!rootEl.value) return null;
+//     const rect = rootEl.value.getBoundingClientRect();
+//     return {
+//         x: rect.left,
+//         y: rect.top,
+//         width: rect.width,
+//         height: rect.height,
+//         right: rect.right,
+//         bottom: rect.bottom
+//     };
+// };
+
+// // Make sure to expose both value and getPosition
+// defineExpose({
+//     getPosition, // expose the method directly
+//     value: categoryItem
+// });
 </script>
 <template>
-    <div class="block-category-single">
+    <div class="block-category-single" ref="rootEl">
         <au-btn
-            :txt="categoryItem.name || ''"
+            :txt="safeCategory.name"
             :style="{
-                // '--bd-color': getRgbColor(categoryItem.rgb),
                 '--txt-hover-color': 'var(--gray-3)',
                 '--bg-hover-color': '#fff',
-                '--bd-hover-color': getRgbColor(getDarkerRgb(categoryItem.rgb)),
-                '--hover-shadow': getHoverShadow(categoryItem.rgb)
+                '--bd-hover-color': getRgbColor(getDarkerRgb(safeCategory.rgb)),
+                '--hover-shadow': getHoverShadow(safeCategory.rgb)
             }">
             <template #icon-top>
-                <au-img :default-src="`${imgPath}icons/${categoryItem.icon}`"></au-img>
+                <au-img :default-src="`${imgPath}icons/${safeCategory.icon}`"></au-img>
             </template>
         </au-btn>
     </div>
