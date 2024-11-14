@@ -8,8 +8,9 @@ const panelStore = usePanelStore();
 const { selectedItem } = storeToRefs(panelStore);
 // console.log(selectedItem.value);
 
-const date = ref(selectedItem.value.date);
-const name = ref(selectedItem.value.name);
+const today = new Date().toISOString().split("T")[0];
+const date = ref(selectedItem.value.date || today);
+const name = ref(selectedItem.value.name || "");
 const category_id = ref(selectedItem.value.category_id);
 
 // Add calculator buttons array
@@ -147,7 +148,7 @@ const handleSubmit = () => {
 
     const formData = {
         date: date.value,
-        name: name.value,
+        name: name.value || "",
         category_id: category_id.value,
         amount: submitAmount
     };
@@ -159,6 +160,8 @@ const handleSubmit = () => {
 
     // Reset calculator and amount display
     clearCalculator();
+    name.value = ""; // Reset name field
+    date.value = today; // Reset date to today
 };
 
 watch(selectedItem, (newValue) => {
@@ -182,7 +185,7 @@ watch(
     <au-panel class="panel-add">
         <au-btn class="add-close" @click="panelStore.isAddPanel = false">
             <template #icon-top>
-                <au-img :default-src="`${imgPath}/icons/close.png`" />
+                <au-img :default-src="`${imgPath}icons/close.png`" />
             </template>
         </au-btn>
         <div class="frm-wrap add-frm">
@@ -195,7 +198,7 @@ watch(
             <!-- <div class="frm-row">
                 <block-category :active-id="category_id"></block-category>
             </div> -->
-            <div class="frm-row">
+            <div class="frm-row frm-row-inline">
                 <block-category-single></block-category-single>
                 <block-amount ref="amountBlock"></block-amount>
             </div>

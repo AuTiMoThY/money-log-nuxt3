@@ -33,9 +33,11 @@ onMounted(() => {
 <template>
     <div class="block-category-single">
         <au-btn
-            :txt="categoryItem.name"
+            :txt="categoryItem.name || ''"
             :style="{
                 // '--bd-color': getRgbColor(categoryItem.rgb),
+                '--txt-hover-color': 'var(--gray-3)',
+                '--bg-hover-color': '#fff',
                 '--bd-hover-color': getRgbColor(getDarkerRgb(categoryItem.rgb)),
                 '--hover-shadow': getHoverShadow(categoryItem.rgb)
             }">

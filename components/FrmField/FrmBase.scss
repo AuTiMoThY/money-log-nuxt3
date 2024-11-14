@@ -38,6 +38,10 @@ input[type="number"] {
 }
 
 .frm-row {
+    &-inline {
+        display: flex;
+        gap: var(--spacing-1x);
+    }
     &-btn {
         display: flex;
         justify-content: center;
